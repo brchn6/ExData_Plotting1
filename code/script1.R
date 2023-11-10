@@ -8,5 +8,7 @@ df$Time <- strptime(df$Time, format = "%H:%M:%S")
 df$Global_active_power <- as.numeric(as.character(df$Global_active_power)) 
 #disable the scientific way of writing numbers
 options(scipen = 999) 
+#subsetting the big df into df that holds onky dates from the 01/02/2007 - 02/02/2007 # nolint
+df<- subset(df , Date >= as.Date("01/02/2007") & Date <= as.Date("02/02/2007"))
 #plot the hist plot
-hist(df$Global_active_power, col = "red", xlim= c(0,6), main =" Global Active Power")
+hist(df$Global_active_power, col = "red", xlim= c(0,6), main =" Global Active Power" , xlab= "Global active power (kilowatt)")
