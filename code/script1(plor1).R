@@ -18,5 +18,11 @@ df2$Global_active_power <- as.numeric(as.character(df2$Global_active_power))
 #disable the scientific way of writing numbers
 options(scipen = 999)
 
+#creating a pnf file
+png("ExData_Plotting1/pngfiles/plot1.png")
+
 #plot the hist plot
-hist(df2$Global_active_power, col = "red", xlim= c(0,6),ylim= c(0,1200), main = " Global Active Power") # nolint
+hist(df2$Global_active_power, col = "red", xlim= c(0,6),ylim= c(0,1200),xlab= "Global Active Power (kilowatt)", main = "Global Active Power") 
+
+#close png file
+dev.off()
