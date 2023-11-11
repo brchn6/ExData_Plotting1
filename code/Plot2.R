@@ -1,4 +1,7 @@
-#assuming i have the df and df2 from the first script
+#Assuming thw env as the data loaded have the df and df2 from the first script
+
+#CREATING DATETIME COL
+df2$DateTime <- as.POSIXct(paste(df2$Date, df2$Time), format = "%Y-%m-%d %H:%M:%S")
 
 #change the time into new com name TimeOnly under specific format
 df2$TimeOnly <- format(df2$Time, "%H:%M:%S")
@@ -23,7 +26,7 @@ custom_axis <- function() {
   axis(1, at = c(beginning, middle, end), labels = c("Thu", "Fri", "Sat"))
 }
 #png file
-png("ExData_Plotting1\\pngfiles\\plot2.png")
+png("pngfiles\\plot2.png")
 # Plot without the default x-axis
 plot(Global_active_power ~ DateTime, data = df2, type = "l", 
      xlab = "", ylab = "Global Active Power", xaxt = 'n')
