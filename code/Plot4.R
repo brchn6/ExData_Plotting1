@@ -48,3 +48,10 @@ plot(Global_reactive_power ~ DateTime, data = df2, type = "l",
 # Add the custom x-axis
 custom_axis()
 dev.off()
+
+# Check if the file exists
+if (file.exists(file_path)) {
+  print("PNG file has been created")
+} else {
+  print("PNG file does not exist.")
+}
