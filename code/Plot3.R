@@ -1,5 +1,5 @@
-
-png("ExData_Plotting1\\pngfiles\\plot3.png")
+file_path <- "pngfiles\\plot3.png"
+png(file_path)
 
 plot(Sub_metering_1 ~ DateTime, data = df2, type = "l", 
      xlab = "", ylab = "Energy sub metering", xaxt = 'n', col = "black")
@@ -27,3 +27,10 @@ custom_axis <- function() {
 custom_axis()
 
 dev.off()
+
+# Check if the file exists
+if (file.exists(file_path)) {
+  print("PNG file has been created")
+} else {
+  print("PNG file does not exist.")
+}
