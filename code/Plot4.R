@@ -38,8 +38,9 @@ points(Sub_metering_3 ~ DateTime, data = df2, type = "l",
 legend("topright", 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
        col = c("black", "red", "blue"), 
-       lwd = 0, bty = "n", # Set line width to 0 and no box type
-       y.intersp = 1.5)    # Adjust vertical spacing between linescustom_axis()
+       lwd = 1, bty = "n", # Set line width to 0 and no box type
+       y.intersp = 0.8,
+       cex = .9)    # Adjust vertical spacing between linescustom_axis()
 
 custom_axis()
 # Plot 4: Yet another empty plot
