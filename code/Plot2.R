@@ -26,7 +26,8 @@ custom_axis <- function() {
   axis(1, at = c(beginning, middle, end), labels = c("Thu", "Fri", "Sat"))
 }
 #png file
-png("pngfiles\\plot2.png")
+file_path <- "pngfiles\\plot2.png"
+png(file_path)
 # Plot without the default x-axis
 plot(Global_active_power ~ DateTime, data = df2, type = "l", 
      xlab = "", ylab = "Global Active Power", xaxt = 'n')
@@ -34,3 +35,11 @@ plot(Global_active_power ~ DateTime, data = df2, type = "l",
 # Add the custom x-axis
 custom_axis()
 dev.off()
+
+
+# Check if the file exists
+if (file.exists(file_path)) {
+  print("PNG file has been created")
+} else {
+  print("PNG file does not exist.")
+}
