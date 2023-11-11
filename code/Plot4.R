@@ -1,5 +1,3 @@
-library(png)   # Load the png library
-library(grid)  # Load the grid library
 png("ExData_Plotting1\\pngfiles\\plot4.png")
 x_range <- range(df2$DateTime)
 # Calculate the positions
