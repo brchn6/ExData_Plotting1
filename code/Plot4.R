@@ -1,4 +1,5 @@
-png("ExData_Plotting1\\pngfiles\\plot4.png")
+file_path <- "pngfiles\\plot4.png"
+png(file_path)
 x_range <- range(df2$DateTime)
 # Calculate the positions
 beginning <- x_range[1]  # start of the x-axis
